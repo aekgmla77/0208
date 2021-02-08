@@ -178,7 +178,7 @@
 <div id="editEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form id="frr" name="frr" method="post" action="foodUpdate.do">
+			<form id="frr" name="frr" method="post" action="FoodUpdate.do">
 				<div class="modal-header">
 					<h4 class="modal-title">메뉴 수정</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -210,9 +210,14 @@
 						<label>상세 정보</label>
 						<textarea class="form-control" id="mContent2" name="mContent2" required></textarea>
 					</div>
+					<div class="form-group">
+						<label>Image</label>
+						<textarea class="form-control" id="mImage2" name="mImage2" required></textarea>
+						<input class="form-control" type="file" name="file" >
+					</div>
 				</div>
 					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="취소">
+						<input type="reset" class="btn btn-default" data-dismiss="modal" value="취소">
 						<input type="submit" class="btn btn-info" value="저장">
 					</div>
 			</form>

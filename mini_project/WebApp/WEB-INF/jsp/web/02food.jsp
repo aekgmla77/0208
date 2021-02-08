@@ -99,7 +99,7 @@
 						<c:if test = "${vo.mKind eq '도시락'}">
 							<div class="menu-item">
 								<div class="menu-img">
-									<img src="img/menu-burger.jpg" alt="Image"> <!-- Menu 도시락 이미지 -->
+									<img src="/mini_project/img/${vo.mImage }" alt="Image"> <!-- Menu 도시락 이미지 -->
 								</div>
 								<div class="menu-text">
 									<h3>
@@ -123,7 +123,7 @@
 						<c:if test = "${vo.mKind eq '스낵'}">
 							<div class="menu-item">
 								<div class="menu-img">
-									<img src="img/menu-snack.jpg" alt="Image"> <!-- Menu 스낵 이미지 -->
+									<img src="/mini_project/img/${vo.mImage }" alt="Image"> <!-- Menu 스낵 이미지 -->
 								</div>
 								<div class="menu-text">
 									<h3>
@@ -147,7 +147,7 @@
 						<c:if test = "${vo.mKind eq '음료'}">
 							<div class="menu-item">
 								<div class="menu-img">
-									<img src="img/menu-beverage.jpg" alt="Image"> <!-- Menu 음료 이미지 -->
+									<img src="/mini_project/img/${vo.mImage }" alt="Image"> <!-- Menu 음료 이미지 -->
 								</div>
 								<div class="menu-text">
 									<h3>

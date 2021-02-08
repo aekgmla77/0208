@@ -7,7 +7,6 @@ import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,18 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 /**
- * Servlet implementation class FoodUpload
+ * Servlet implementation class FoodUpFile
  */
-@WebServlet("/FoodUpload")
-@MultipartConfig(maxFileSize = -1, maxRequestSize = -1, fileSizeThreshold = 1024)
-public class FoodUpload extends HttpServlet {
+@WebServlet("/FoodUpFile")
+public class FoodUpFile extends HttpServlet {
 	private static final String CHARSET = "utf-8";
 	private static final String ATTACHES_DIR = "C:\\attaches"; // c:attaces >> 저장하는 경로
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public FoodUpload() {
+	public FoodUpFile() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -71,7 +69,7 @@ public class FoodUpload extends HttpServlet {
 			}
 
 //			out.println("<h1>업로드 완료</h1>");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("foodInsert.do");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("foodUpdate.do");
 			dispatcher.forward(request, response);
 			
 		} else {
