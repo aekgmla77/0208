@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import co.mini_project.project.app.food.FoodDelete;
 import co.mini_project.project.app.food.FoodInsert;
 import co.mini_project.project.app.food.FoodList;
+import co.mini_project.project.app.food.FoodUpFile;
 import co.mini_project.project.app.food.FoodUpdate;
+import co.mini_project.project.app.food.FoodUpload;
 import co.mini_project.project.app.franchise.FranchiseDelete;
 import co.mini_project.project.app.franchise.FranchiseForm;
 import co.mini_project.project.app.franchise.FranchiseInsert;
@@ -78,7 +80,6 @@ public class FrontController extends HttpServlet {
 		map.put("/foodInsert.do", new FoodInsert());
 		map.put("/foodUpdate.do", new FoodUpdate());
 		map.put("/foodDelete.do", new FoodDelete());
-//		map.put("/foodUpload.do", new FoodUpload());
 		// store (정병기)
 		map.put("/storeList.do", new StoreList());
 		map.put("/storeInsert.do", new StoreInsert());

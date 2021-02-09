@@ -60,7 +60,7 @@
 		$('#mName2').val($(e.target).parent().parent().parent().children().eq(3).html());
 		$('#mPrice2').val($(e.target).parent().parent().parent().children().eq(4).html());
 		$('#mContent2').val($(e.target).parent().parent().parent().children().eq(5).html());
-		$('#mImage2').val($(e.target).parent().parent().parent().children().eq(6).html());
+ 		$('#mImage2').val($(e.target).parent().parent().parent().children().eq(6).html());
 	}
 </script>
 </head>
@@ -78,8 +78,6 @@
 					<div class="col-sm-6">
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
 						<i class="material-icons">&#xE147;</i><span>메뉴 등록</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal">
-						<i class="material-icons">&#xE15C;</i><span>메뉴 삭제</span></a>		
 					</div>
 				</div>
 			</div>
@@ -178,7 +176,7 @@
 <div id="editEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form id="frr" name="frr" method="post" action="FoodUpdate.do">
+			<form id="frr" name="frr" enctype="multipart/form-data" action="FoodUpFile" method="post" onsubmit="updateImage(event)"> <!-- action="FoodUpFile" onsubmit="updateImage(event)" -->
 				<div class="modal-header">
 					<h4 class="modal-title">메뉴 수정</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -212,10 +210,10 @@
 					</div>
 					<div class="form-group">
 						<label>Image</label>
-						<textarea class="form-control" id="mImage2" name="mImage2" required></textarea>
-						<input class="form-control" type="file" name="file" >
+						<input type="text" class="form-control" name="mImage2" id="mImage2" required>
+						<input class="form-control" type="file" name="file2">
 					</div>
-				</div>
+					</div>
 					<div class="modal-footer">
 						<input type="reset" class="btn btn-default" data-dismiss="modal" value="취소">
 						<input type="submit" class="btn btn-info" value="저장">
@@ -255,14 +253,14 @@
 			$('#mImage').val(imgName);
 			document.frm.submit();
 		}
-	function updateImage(r) {
-		r.preventDefault();
-//		console.log(e.target.childNodes[3].childNodes[11].childNodes[3].value);
-		var imgName = r.target.childNodes[3].childNodes[11].childNodes[3].value;
+	function updateImage(e) {
+		e.preventDefault();
+//		console.log(e.target.childNodes[5].childNodes[11].childNodes[5].value);
+		var imgName = e.target.childNodes[5].childNodes[11].childNodes[5].value;
 			imgName = imgName.substring(imgName.lastIndexOf('\\') + 1);
 			$('#mImage2').val(imgName);
-			document.frm.submit();
-		}
+			document.frr.submit();
+ 		}
 </script>
 </body>
 </html>

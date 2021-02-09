@@ -95,18 +95,18 @@ public class FoodDAO extends DAO {
 
 		return n;
 	}
-
+	
 	public int update(FoodVO vo) {
 		int n = 0;
-		String sql = "UPDATE MENU SET MENUKIND = ?, MENUNAME = ?, MENUPRICE = ?, MENUCONTENT = ? WHERE MENUNUMBER = ?";
+		String sql = "UPDATE MENU SET MENUKIND = ?, MENUNAME = ?, MENUPRICE = ?, MENUCONTENT = ?, MENUIMAGE = ? WHERE MENUNUMBER = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getmKind());
 			psmt.setString(2, vo.getmName());
 			psmt.setString(3, vo.getmPrice());
 			psmt.setString(4, vo.getmContent());
-//			psmt.setString(5, vo.getmImage());
-			psmt.setInt(5, vo.getmNumber());
+			psmt.setString(5, vo.getmImage());
+			psmt.setInt(6, vo.getmNumber());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
